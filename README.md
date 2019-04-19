@@ -23,6 +23,7 @@ yarn add react-columned
 ## Quick Example:
 Sort images into columns. Use default columns configuration. 
 
+![A simple example](./docs/simple-example.gif)
 ```javascript
 import Columns from "react-columned";
 ```
