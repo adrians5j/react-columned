@@ -1,3 +1,2 @@
-import { Columned } from "./Columned";
-
+import Columned from "./Columned";
 export default Columned;
