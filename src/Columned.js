@@ -1,6 +1,7 @@
 // @flow
 import * as React from "react";
 import elementResizeDetectorMaker from "element-resize-detector";
+import getColumnsCount from "./utils/getColumnsCount";
 
 const { useEffect, useRef, useState } = React;
 
@@ -9,7 +10,10 @@ type Props = {
     children: React.Node,
 
     // Number of columns, per max screen size, eg. { "320": 1, "480": 2, "800": 3, "1366": 4 }.
-    columns: number | { [string]: number }
+    columns: number | { [string]: number },
+
+    // Class to append on columns container.
+    className?: string
 };
 
 const style = {
@@ -28,35 +32,18 @@ const style = {
     }
 };
 
-function getColumnsCount({ columnsParams, width }): number {
-    if (typeof columnsParams === "number") {
-        return parseInt(columnsParams);
-    }
-
-    const sortedWidths = Object.keys(columnsParams).sort();
-
-    for (let i = 0; i < sortedWidths.length; i++) {
-        if (width <= parseInt(sortedWidths[i])) {
-            return columnsParams[sortedWidths[i]];
-        }
-    }
-
-    // Return last.
-    return columnsParams[sortedWidths[sortedWidths.length - 1]];
-}
-
 let elementResizeDetector = null;
 
 function Columned(props: Props) {
     const containerRef = useRef();
 
-    const [containerWidth, setContainerWidth] = useState(0);
+    const [containerWidth, setContainerWidth]: [number, Function] = useState(0);
 
     useEffect(() => {
         if (containerRef.current) {
             setContainerWidth(containerRef.current.offsetWidth);
             elementResizeDetector = elementResizeDetectorMaker({
-                strategy: "scroll" //<- For ultra performance.
+                strategy: "scroll"
             });
             elementResizeDetector.listenTo(containerRef.current, element =>
                 setContainerWidth(element.offsetWidth)
@@ -71,9 +58,9 @@ function Columned(props: Props) {
         };
     }, []);
 
-    const { children, columns } = props;
+    const { children, columns, className } = props;
 
-    const columnsCount = getColumnsCount({ columnsParams: columns, width: containerWidth });
+    const columnsCount = getColumnsCount(columns, containerWidth);
 
     const renderedColumns = [];
     for (let i = 0; i < columnsCount; i++) {
@@ -95,7 +82,7 @@ function Columned(props: Props) {
     });
 
     return (
-        <react-columned style={style.wrap} ref={containerRef}>
+        <react-columned ref={containerRef} style={style.wrap} class={className}>
             {renderedColumns.map((column, i) => (
                 <react-columned-column
                     key={i}
@@ -113,7 +100,7 @@ function Columned(props: Props) {
 }
 
 Columned.defaultProps = {
-    columns: { "320": 1, "480": 2, "800": 3, "1366": 4 }
+    columns: { "320": 1, "480": 2, "800": 3, "1366": 4, "1920": 6 }
 };
 
-export { Columned };
+export default Columned;
