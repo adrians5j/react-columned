@@ -8,7 +8,7 @@
 [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
   
-A component that, based on parent container's width, sorts given child nodes into a preferred number of columns. 
+A component that, based on container's width, sorts given child nodes into a preferred number of columns. 
 
 ![A simple example](./docs/simple-example.gif)
 
@@ -49,7 +49,7 @@ Visit https://react-columned.netlify.com to see it live in action.
 
 ## How it works
 The component uses [element-resize-detector](https://www.npmjs.com/package/element-resize-detector) 
-(which is the only dependency of this package) to get the parent 
+(which is the only dependency of this package) to get the  
 container's width. Based on received result, it then sorts the child 
 nodes into a needed number of columns, which are simple inline-block divs.
 
