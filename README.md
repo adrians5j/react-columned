@@ -69,7 +69,33 @@ translates to the following:
 - `801px <= container <= 1366px`: 4 columns
 - `1367px <= container`: 6 columns
 
- 
+## Troubleshooting
+
+If you're having visual issues, try applying the following two CSS rules 
+on every child node:
+```
+display: 'block'; // Prevents spacing between child nodes in a column. 
+width: 100% // Child nodes might be wider than the column, this prevents it.
+```
+
+You can easily do this by setting a class on the <Columned> component.
+For example (using [emotion](https://www.npmjs.com/package/emotion)):
+
+```
+const columnedStyles = css({
+    img: {
+        display: "block",
+        width: "100%"
+    }
+});
+```
+
+```
+<Columned className={columnedStyles}>
+    (...)
+</Columned>
+```
+
 ## Contributors
 
 Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds/all-contributors#emoji-key)):
