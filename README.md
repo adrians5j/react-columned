@@ -8,7 +8,7 @@
 [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
   
-A component that sorts given child nodes into a preferred number of columns. 
+A component that, based on parent container's width, sorts given child nodes into a preferred number of columns. 
 
 ![A simple example](./docs/simple-example.gif)
 
