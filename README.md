@@ -30,7 +30,7 @@ import Columned from "react-columned";
 ```
 
 ```javascript
-<Columned className={styles}>
+<Columned>
   <img alt="Image 1" src={"https://..."} />
   <img alt="Image 2" src={"https://..."} />
   <img alt="Image 3" src={"https://..."} />
