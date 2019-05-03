@@ -59,7 +59,7 @@ nodes into a needed number of columns, which are simple inline-block divs.
 | :------------------ | :-------------------------------- | :----------------------------------------------------------- | :------------------------------------------------------------------------------------------------ |
 | `children`          | `React.Node`                      | null                                                         | Child nodes which are about to be sorted into columns                                             |
 | `className`         | `?string`                         | undefined                                                    | Class to append on columns container.                                                             |
-| `columns`           | `{[string] : number} \| number`    | `{ "320": 1, "480": 2, "800": 3, "1366": 4, "1920": 6 }`     | Number of columns, per container size, eg. { "320": 1, "480": 2, "800": 3, "1366": 4 }. If you need a fixed amount of columns, regardless of the screen size, just pass a number, eg. `4`. |
+| `columns`           | `{ [string] : number } \| number`    | `{ "320": 1, "480": 2, "800": 3, "1366": 4, "1920": 6 }`     | Number of columns, per container size, eg. `{ "320": 1, "480": 2, "800": 3, "1366": 4 }`. If you need a fixed amount of columns, regardless of the screen size, just pass a number, eg. `4`. |
 
 The default `{ "320": 1, "480": 2, "800": 3, "1366": 4, "1920": 6 }` 
 translates to the following:
