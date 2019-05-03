@@ -78,7 +78,7 @@ display: 'block'; // Prevents spacing between child nodes in a column.
 width: 100% // Child nodes might be wider than the column, this prevents it.
 ```
 
-You can easily do this by setting a class on the <Columned> component.
+You can easily do this by setting a class on the `<Columned>` component.
 For example, if the child nodes are `img` elements (using [emotion](https://www.npmjs.com/package/emotion) for defining styles):
 
 ```
