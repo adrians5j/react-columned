@@ -72,6 +72,7 @@ function Columned(props: Props) {
         last: columnsCount - 1
     };
 
+    // Will not render anything if no children are present.
     React.Children.forEach(children, child => {
         renderedColumns[columnsIndexes.current].push(child);
         if (columnsIndexes.current === columnsIndexes.last) {
