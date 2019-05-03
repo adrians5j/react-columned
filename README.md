@@ -26,7 +26,7 @@ yarn add react-columned
 Sort images into columns. Use default columns configuration. 
 
 ```javascript
-import Columns from "react-columned";
+import Columned from "react-columned";
 ```
 
 ```javascript
@@ -45,8 +45,31 @@ import Columns from "react-columned";
 
 ```
 
-More examples on https://react-columned.netlify.com.
+Visit https://react-columned.netlify.com to see it live in action.
 
+## How it works
+The component uses `element-resize-detector` (which is the only 
+dependency of this package) to get the parent container's width. 
+Based on received result, it sorts the child nodes into a needed 
+number of columns, which are simple inline-block divs.
+
+## Props
+
+| Prop                | Type                              | Default                                                      | Description                                                                                       |
+| :------------------ | :-------------------------------- | :----------------------------------------------------------- | :------------------------------------------------------------------------------------------------ |
+| `children`          | `React.Node`                      | null                                                         | Child nodes which are about to be sorted into columns                                             |
+| `className`         | `?string`                         | undefined                                                    | Class to append on columns container.                                                             |
+| `columns`           | `{[string] : number} | number`    | `{ "320": 1, "480": 2, "800": 3, "1366": 4, "1920": 6 }`     | Number of columns, per container size, eg. { "320": 1, "480": 2, "800": 3, "1366": 4 }. If you need a fixed amount of columns, regardless of the screen size, just pass a number, eg. `4`. |
+
+The default `{ "320": 1, "480": 2, "800": 3, "1366": 4, "1920": 6 }` 
+translates to the following:
+- `container <= 320px` : 1 column
+- `321px <= container <= 480px`: 2 columns
+- `481px <= container <= 800px`: 3 columns
+- `801px <= container <= 1366px`: 4 columns
+- `1367px <= container`: 6 columns
+
+ 
 ## Contributors
 
 Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds/all-contributors#emoji-key)):

@@ -9,7 +9,7 @@ type Props = {
     // An array of elements that need to be shown, for example images.
     children: React.Node,
 
-    // Number of columns, per max screen size, eg. { "320": 1, "480": 2, "800": 3, "1366": 4 }.
+    // Number of columns, per container size, eg. { "320": 1, "480": 2, "800": 3, "1366": 4 }.
     columns: number | { [string]: number },
 
     // Class to append on columns container.
