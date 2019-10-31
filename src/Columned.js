@@ -52,7 +52,7 @@ function Columned(props: Props) {
 
         return () => {
             if (elementResizeDetector) {
-                elementResizeDetector.uninstall();
+                elementResizeDetector.uninstall(containerRef.current);
                 elementResizeDetector = null;
             }
         };
