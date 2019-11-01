@@ -21,6 +21,16 @@
         "review",
         "test"
       ]
+    },
+    {
+      "login": "NexisSis",
+      "name": "Nikita",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/10584062?v=4",
+      "profile": "https://github.com/NexisSis",
+      "contributions": [
+        "code",
+        "maintenance"
+      ]
     }
   ]
 }

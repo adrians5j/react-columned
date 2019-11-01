@@ -5,7 +5,7 @@
 [![](https://img.shields.io/npm/v/react-columned.svg)](https://www.npmjs.com/package/react-columned)
 ![](https://img.shields.io/npm/types/react-columned.svg)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
   
 A component that, based on container's width, sorts given child nodes into a preferred number of columns. 
@@ -102,8 +102,8 @@ Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore -->
-| [<img src="https://avatars0.githubusercontent.com/u/5121148?v=4" width="100px;"/><br /><sub><b>Adrian Smijulj</b></sub>](https://github.com/doitadrian)<br />[💻](https://github.com/doitadrian/react-columned/commits?author=doitadrian "Code") [📖](https://github.com/doitadrian/react-columned/commits?author=doitadrian "Documentation") [💡](#example-doitadrian "Examples") [👀](#review-doitadrian "Reviewed Pull Requests") [⚠️](https://github.com/doitadrian/react-columned/commits?author=doitadrian "Tests") |
-| :---: |
+| [<img src="https://avatars0.githubusercontent.com/u/5121148?v=4" width="100px;" alt="Adrian Smijulj"/><br /><sub><b>Adrian Smijulj</b></sub>](https://github.com/doitadrian)<br />[💻](https://github.com/doitadrian/react-columned/commits?author=doitadrian "Code") [📖](https://github.com/doitadrian/react-columned/commits?author=doitadrian "Documentation") [💡](#example-doitadrian "Examples") [👀](#review-doitadrian "Reviewed Pull Requests") [⚠️](https://github.com/doitadrian/react-columned/commits?author=doitadrian "Tests") | [<img src="https://avatars0.githubusercontent.com/u/10584062?v=4" width="100px;" alt="Nikita"/><br /><sub><b>Nikita</b></sub>](https://github.com/NexisSis)<br />[💻](https://github.com/doitadrian/react-columned/commits?author=NexisSis "Code") [🚧](#maintenance-NexisSis "Maintenance") |
+| :---: | :---: |
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/kentcdodds/all-contributors) specification. Contributions of any kind welcome!
