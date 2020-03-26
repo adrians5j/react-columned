@@ -40,17 +40,19 @@ function Columned(props: Props) {
     const [containerWidth, setContainerWidth]: [number, Function] = useState(0);
 
     useEffect(() => {
+        let canceled = false;
         if (containerRef.current) {
-            setContainerWidth(containerRef.current.offsetWidth);
+            !canceled && setContainerWidth(containerRef.current.offsetWidth);
             elementResizeDetector = elementResizeDetectorMaker({
                 strategy: "scroll"
             });
             elementResizeDetector.listenTo(containerRef.current, element =>
-                setContainerWidth(element.offsetWidth)
+                !canceled && setContainerWidth(element.offsetWidth)
             );
         }
 
         return () => {
+            canceled = true;
             if (elementResizeDetector) {
                 elementResizeDetector.uninstall(containerRef.current);
                 elementResizeDetector = null;
