@@ -3,7 +3,7 @@ import * as React from "react";
 import elementResizeDetectorMaker from "element-resize-detector";
 import getColumnsCount from "./utils/getColumnsCount";
 
-const { useEffect, useRef, useState } = React;
+const { useEffect, useMemo, useRef, useState } = React;
 
 type Props = {
     // An array of elements that need to be shown, for example images.
@@ -60,7 +60,10 @@ function Columned(props: Props) {
 
     const { children, columns, className } = props;
 
-    const columnsCount = getColumnsCount(columns, containerWidth);
+    const columnsCount = useMemo(() => getColumnsCount(columns, containerWidth), [
+        columns,
+        containerWidth
+    ]);
 
     const renderedColumns = [];
     for (let i = 0; i < columnsCount; i++) {
