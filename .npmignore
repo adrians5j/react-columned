@@ -1,0 +1,16 @@
+.storybook
+docs
+scripts
+src
+stories
+.all-contributorsrc
+.babelrc
+.eslintrc.js
+.flowconfig
+.gitattributes
+.gitignore
+.prettierrc.js
+.travis.yml
+CONTRIBUTING.md
+ISSUE_TEMPLATE.md
+PULL_REQUEST_TEMPLATE.md
