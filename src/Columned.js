@@ -13,7 +13,13 @@ type Props = {
     columns: number | { [string]: number },
 
     // Class to append on columns container.
-    className?: string
+    className?: string,
+
+    // Style for entire column(s)
+    colStyle?: any,
+
+    // Style for individual card(s)
+    cardStyle?: any
 };
 
 const style = {
@@ -58,7 +64,7 @@ function Columned(props: Props) {
         };
     }, []);
 
-    const { children, columns, className } = props;
+    const { children, columns, className, colStyle = {}, cardStyle = {} } = props;
 
     const columnsCount = getColumnsCount(columns, containerWidth);
 
@@ -87,10 +93,10 @@ function Columned(props: Props) {
             {renderedColumns.map((column, i) => (
                 <react-columned-column
                     key={i}
-                    style={{ ...style.column, width: `calc(100% / ${columnsCount})` }}
+                    style={{ ...style.column, width: `calc(100% / ${columnsCount})`, ...colStyle }}
                 >
                     {column.map((item, j) => (
-                        <react-columned-item style={style.item} key={j}>
+                        <react-columned-item style={{...style.item, ...cardStyle}} key={j}>
                             {item}
                         </react-columned-item>
                     ))}
